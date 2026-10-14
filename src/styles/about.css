@@ -1,0 +1,232 @@
+.about-intro {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 90px;
+}
+
+.about-copy {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+.about-copy strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.stack-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 38px;
+  margin-bottom: 16px;
+}
+
+.small-label {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.stack-caption {
+  color: var(--muted-foreground);
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+}
+
+.tech {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--background);
+}
+
+.tech svg,
+.tech img {
+  width: 29px;
+  height: 29px;
+  fill: currentColor;
+  object-fit: contain;
+}
+
+.tech span {
+  color: var(--foreground);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.tech-react {
+  color: var(--react);
+}
+
+.tech-node {
+  color: var(--node);
+}
+
+.tech-java {
+  color: var(--java);
+}
+
+.tech-python {
+  color: var(--python);
+}
+
+.tech-kotlin {
+  color: var(--kotlin);
+}
+
+.tech-sql {
+  color: var(--sql);
+}
+
+.tech-mongo {
+  color: var(--mongo);
+}
+
+.java-coffee-icon {
+  fill: none !important;
+  stroke-width: 1.4px;
+}
+
+.java-coffee-icon .java-steam {
+  fill: none;
+  stroke: #f89820;
+  stroke-linecap: round;
+}
+
+.java-coffee-icon .java-cup {
+  fill: #5382a1;
+  stroke: #5382a1;
+  stroke-linejoin: round;
+}
+
+.java-coffee-icon .java-cup-outline {
+  fill: none;
+  stroke: #5382a1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.other-stack {
+  margin-top: 15px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+.other-stack span {
+  margin-right: 10px;
+  color: var(--foreground);
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 80px;
+  margin-top: 48px;
+}
+
+.timeline-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 25px;
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.timeline-title svg {
+  width: 18px;
+  color: var(--muted-foreground);
+}
+
+.timeline-item {
+  position: relative;
+  margin-left: 7px;
+  padding: 0 0 25px 23px;
+  border-left: 1px solid var(--border);
+  transition:
+    background 0.3s,
+    border-color 0.5s;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-item::before {
+  position: absolute;
+  top: 4px;
+  left: -4px;
+  width: 7px;
+  height: 7px;
+  border: 2px solid var(--background);
+  border-radius: 50%;
+  outline: 1px solid var(--border);
+  background: var(--primary);
+  content: "";
+}
+
+.timeline-item.is-visible {
+  border-color: var(--primary);
+}
+
+.timeline-item:hover {
+  background: color-mix(in oklab, var(--primary) 4%, transparent);
+}
+
+.timeline-item:hover::before {
+  box-shadow: 0 0 0 5px color-mix(in oklab, var(--primary) 15%, transparent);
+}
+
+.timeline-item.is-visible::before {
+  animation: portfolio-timeline-node 2.8s ease-out 2;
+}
+
+.timeline-date {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--muted-foreground);
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+.timeline-item h4 {
+  margin: 0 0 5px;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.timeline-company {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+
+.timeline-description {
+  margin: 8px 0 0;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  line-height: 1.85;
+}
+
+.practice {
+  display: inline-block;
+  margin-left: 7px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: var(--muted);
+  color: var(--muted-foreground);
+  font-size: 9px;
+}

@@ -1,0 +1,29 @@
+:root {
+  color-scheme: dark;
+  --font-sans: "Manrope", sans-serif;
+  --font-display: "Manrope", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --background: oklch(0.18 0.004 255);
+  --foreground: oklch(0.95 0.004 240);
+  --primary: oklch(0.7 0.19 42);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.21 0.006 255);
+  --muted: oklch(0.25 0.007 255);
+  --muted-foreground: oklch(0.7 0.01 255);
+  --accent: oklch(0.29 0.025 40);
+  --border: oklch(0.32 0.008 255);
+  --success: oklch(0.71 0.14 158);
+  --project-blue: oklch(0.27 0.035 250);
+  --project-green: oklch(0.28 0.025 135);
+  --contact-background: oklch(0.215 0.008 255);
+  --contact-foreground: oklch(0.97 0.003 240);
+  --contact-muted: oklch(0.72 0.008 240);
+  --contact-border: oklch(0.36 0.008 255);
+  --react: oklch(0.64 0.13 220);
+  --node: oklch(0.72 0.14 140);
+  --java: oklch(0.6 0.17 40);
+  --python: oklch(0.7 0.12 250);
+  --kotlin: oklch(0.6 0.21 305);
+  --sql: oklch(0.56 0.19 25);
+  --mongo: oklch(0.7 0.13 145);
+}

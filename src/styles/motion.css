@@ -1,0 +1,142 @@
+.entry {
+  animation: portfolio-enter 0.65s ease-out both;
+}
+
+.typing-cursor {
+  margin-left: 3px;
+  animation: portfolio-cursor-blink 1.15s steps(1) infinite;
+}
+
+.status-dot {
+  animation: portfolio-status-pulse 3s ease-out infinite;
+}
+
+.hero-bottom a svg {
+  animation: portfolio-arrow-drift 2.5s ease-in-out infinite;
+}
+
+.hero-actions > *,
+.header-contact,
+.social-links > * {
+  transition:
+    transform 0.25s,
+    background 0.25s,
+    box-shadow 0.25s;
+}
+
+.hero-actions > *:hover,
+.header-contact:hover,
+.social-links > *:hover {
+  transform: translateY(-3px);
+}
+
+.tech {
+  transition:
+    transform 0.3s,
+    border-color 0.3s,
+    background 0.3s;
+}
+
+.tech:hover {
+  transform: translateY(-6px);
+  border-color: currentColor;
+  background: var(--muted);
+}
+
+.tech:hover svg,
+.tech:hover img {
+  animation: portfolio-icon-hop 0.5s ease;
+}
+
+.reveal.motion-ready {
+  transform: translateY(22px);
+  opacity: 0;
+}
+
+.reveal.motion-ready.is-visible {
+  transform: none;
+  opacity: 1;
+  animation: portfolio-enter 0.7s cubic-bezier(0.2, 0.65, 0.3, 1) both;
+}
+
+.timeline-item:nth-child(2).is-visible,
+.tech:nth-child(2).is-visible {
+  animation-delay: 0.1s;
+}
+
+.timeline-item:nth-child(3).is-visible,
+.tech:nth-child(3).is-visible {
+  animation-delay: 0.2s;
+}
+
+.tech:nth-child(4).is-visible {
+  animation-delay: 0.25s;
+}
+
+.tech:nth-child(5).is-visible {
+  animation-delay: 0.3s;
+}
+
+.tech:nth-child(6).is-visible {
+  animation-delay: 0.35s;
+}
+
+.tech:nth-child(7).is-visible {
+  animation-delay: 0.4s;
+}
+
+.project-card:nth-child(2).is-visible {
+  animation-delay: 0.12s;
+}
+
+@keyframes portfolio-workspace-drift {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.045) translateX(-7px);
+  }
+}
+
+@keyframes portfolio-cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes portfolio-status-pulse {
+  50% {
+    box-shadow: 0 0 0 7px color-mix(in oklab, var(--success) 4%, transparent);
+  }
+}
+
+@keyframes portfolio-timeline-node {
+  50% {
+    box-shadow: 0 0 0 6px color-mix(in oklab, var(--primary) 12%, transparent);
+  }
+}
+
+@keyframes portfolio-arrow-drift {
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+@keyframes portfolio-icon-hop {
+  50% {
+    transform: translateY(-3px) rotate(5deg);
+  }
+}
+
+@keyframes portfolio-enter {
+  from {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

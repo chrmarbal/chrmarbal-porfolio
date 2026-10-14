@@ -1,0 +1,124 @@
+.hero {
+  position: relative;
+  display: flex;
+  min-height: min(660px, calc(100svh - 140px));
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 54%;
+  animation: portfolio-workspace-drift 16s ease-in-out infinite alternate;
+}
+
+.hero::after {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in oklab, var(--background) 14%, transparent);
+  content: "";
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 24px;
+  padding-bottom: 48px;
+}
+
+.availability {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 32px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--success) 9%, transparent);
+}
+
+.hero h1 {
+  max-width: 680px;
+  margin: 0;
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.13;
+}
+
+.hero h1 .surname {
+  display: block;
+}
+
+.role {
+  margin: 18px 0;
+  color: var(--primary);
+  font-size: 31px;
+  font-weight: 600;
+}
+
+.hero-description {
+  max-width: 440px;
+  margin-bottom: 27px;
+  color: var(--muted-foreground);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.desktop-break {
+  display: block;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.hero-actions > * {
+  height: 44px;
+  padding-inline: 20px;
+  font-size: 12px;
+}
+
+.hero-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 30px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+
+.hero-bottom {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 21px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+
+.hero-bottom a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+}
+
+.hero-bottom .mono {
+  font-family: var(--font-mono);
+}

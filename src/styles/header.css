@@ -1,0 +1,133 @@
+.site-header {
+  position: sticky;
+  z-index: 30;
+  top: 0;
+  height: 88px;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in oklab, var(--background) 94%, transparent);
+  backdrop-filter: blur(16px);
+}
+
+.header-inner {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.identity {
+  display: inline-flex;
+  align-items: baseline;
+  color: var(--foreground);
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.identity img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  transition: transform 0.35s;
+}
+
+.identity:hover img {
+  transform: rotate(-7deg) scale(1.08);
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.header-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 12px;
+}
+
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: color-mix(in oklab, var(--background) 65%, transparent);
+}
+
+.language-option {
+  min-width: 32px;
+  min-height: 28px;
+  padding: 0 6px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted-foreground);
+  font: inherit;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.language-option:hover {
+  color: var(--foreground);
+}
+
+.language-option.active {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+.language-option:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.nav-link {
+  color: var(--muted-foreground);
+  font-size: 13px;
+  transition: color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--foreground);
+}
+
+.nav-link.active::after {
+  display: block;
+  width: 3px;
+  height: 3px;
+  margin: 5px auto -8px;
+  border-radius: 50%;
+  background: var(--primary);
+  content: "";
+}
+
+.header-contact {
+  height: 38px;
+  font-size: 12px;
+}
+
+.mobile-menu-button {
+  display: none;
+}
+
+.mobile-nav {
+  position: absolute;
+  inset-inline: 0;
+  top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 25px;
+  border-bottom: 1px solid var(--border);
+  background: var(--background);
+}
