@@ -5,10 +5,16 @@
 }
 
 .about-copy {
+  display: grid;
+  gap: 16px;
   margin: 0;
   color: var(--muted-foreground);
   font-size: 14px;
   line-height: 1.95;
+}
+
+.about-copy p {
+  margin: 0;
 }
 
 .about-copy strong {
@@ -27,12 +33,6 @@
 .small-label {
   font-size: 11px;
   font-weight: 600;
-}
-
-.stack-caption {
-  color: var(--muted-foreground);
-  font-family: var(--font-mono);
-  font-size: 10px;
 }
 
 .tech-grid {
@@ -118,16 +118,23 @@
   stroke-linejoin: round;
 }
 
-.other-stack {
+.current-learning {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-top: 15px;
   color: var(--muted-foreground);
   font-size: 11px;
   line-height: 1.9;
 }
 
-.other-stack span {
-  margin-right: 10px;
+.current-learning span {
   color: var(--foreground);
+}
+
+.current-learning strong {
+  color: var(--primary);
+  font-weight: 650;
 }
 
 .timeline-grid {

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp, Code2, Smartphone } from "lucide-react";
 import TechnologyLogo from "./TechnologyLogo.jsx";
+import mcnanosoftPreview from "../../assets/mcnanosoft-preview.png";
+import gymtonicPreview from "../../assets/gymtonic-preview.png";
 
 export default function ProjectCard({ project, t }) {
   const [expanded, setExpanded] = useState(false);
@@ -14,11 +16,11 @@ export default function ProjectCard({ project, t }) {
           {project.category}
         </span>
         <img
-          src={project.logo}
-          alt={`Logo de ${project.name}`}
+          src={project.type === "web" ? mcnanosoftPreview : gymtonicPreview}
+          alt={t.projects.previewAlt.replace("{name}", project.name)}
           loading="lazy"
-          width="122"
-          height="122"
+          width={project.type === "web" ? "1248" : "768"}
+          height={project.type === "web" ? "610" : "1569"}
         />
       </div>
       <div className="project-body">
@@ -26,7 +28,9 @@ export default function ProjectCard({ project, t }) {
           <h3>{project.name}</h3>
           <span className="project-label">
             {t.projects.finalProject} · {project.cycle}
-            <span className="project-grade">{project.score}/10</span>
+            <span className="project-grade">
+              {t.projects.grade}: {project.score}/10
+            </span>
           </span>
         </div>
         <p className="project-description">{project.description}</p>

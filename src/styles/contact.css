@@ -39,7 +39,7 @@
   margin-bottom: 22px;
 }
 
-.email-row > a {
+.email-row > .email-address {
   color: var(--contact-foreground);
   font-size: 20px;
   font-weight: 500;

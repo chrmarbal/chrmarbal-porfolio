@@ -33,7 +33,7 @@
     gap: 40px;
   }
 
-  .email-row > a {
+  .email-row > .email-address {
     font-size: 17px;
   }
 
@@ -149,10 +149,6 @@
     padding-block: 15px;
   }
 
-  .stack-caption {
-    display: none;
-  }
-
   .timeline-grid {
     grid-template-columns: 1fr;
     gap: 35px;
@@ -173,7 +169,7 @@
   }
 
   .project-visual {
-    height: 190px;
+    height: 220px;
   }
 
   .project-description {
@@ -212,8 +208,7 @@
 }
 
 @media (max-width: 640px) {
-  .desktop-break,
-  .footer-note {
+  .desktop-break {
     display: none;
   }
 }

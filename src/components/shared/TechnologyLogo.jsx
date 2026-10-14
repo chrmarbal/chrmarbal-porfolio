@@ -1,4 +1,3 @@
-import { siStripe } from "simple-icons";
 import { technologies } from "../../data/portfolio.js";
 import JavaLogo from "./JavaLogo.jsx";
 
@@ -11,8 +10,7 @@ export default function TechnologyLogo({ name }) {
     return <JavaLogo />;
   }
 
-  const icon =
-    name === "Stripe" ? siStripe : technologies.find((tech) => tech.name === name)?.icon;
+  const icon = technologies.find((tech) => tech.name === name)?.icon;
 
   if (!icon) return null;
   return (

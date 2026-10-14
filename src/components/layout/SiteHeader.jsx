@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
-import { email, navigation } from "../../data/site.js";
+import { navigation } from "../../data/site.js";
 
 export default function SiteHeader({ active, language, onLanguageChange, t }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -41,7 +41,7 @@ export default function SiteHeader({ active, language, onLanguageChange, t }) {
               </button>
             ))}
           </div>
-          <a className="button button-outline header-contact" href={`mailto:${email}`}>
+          <a className="button button-outline header-contact" href="#contacto">
             {t.letsTalk} <ArrowUpRight />
           </a>
           <button

@@ -12,17 +12,25 @@ import { cvUrl, email } from "../../data/site.js";
 import SectionKicker from "../shared/SectionKicker.jsx";
 
 export default function ContactSection({ t }) {
-  const [copied, setCopied] = useState(false);
+  const [copyStatus, setCopyStatus] = useState("idle");
 
   async function copyEmail() {
     try {
       await navigator.clipboard.writeText(email);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2500);
+      setCopyStatus("copied");
+      window.setTimeout(() => setCopyStatus("idle"), 2500);
     } catch {
-      window.location.href = `mailto:${email}`;
+      setCopyStatus("failed");
+      window.setTimeout(() => setCopyStatus("idle"), 2500);
     }
   }
+
+  const copyLabel =
+    copyStatus === "copied"
+      ? t.contact.copied
+      : copyStatus === "failed"
+        ? t.contact.copyFailed
+        : t.contact.copyEmail;
 
   return (
     <section id="contacto" className="contact-section">
@@ -42,18 +50,22 @@ export default function ContactSection({ t }) {
         <div className="contact-options">
           <div className="email-row">
             <Mail />
-            <a href={`mailto:${email}`}>{email}</a>
+            <span className="email-address">{email}</span>
             <button
               type="button"
               className="button button-ghost button-icon contact-copy"
-              title={copied ? t.contact.copied : t.contact.copyEmail}
-              aria-label={copied ? t.contact.copied : t.contact.copyEmail}
+              title={copyLabel}
+              aria-label={copyLabel}
               onClick={copyEmail}
             >
-              {copied ? <Check /> : <Copy />}
+              {copyStatus === "copied" ? <Check /> : <Copy />}
             </button>
             <span className="sr-only" aria-live="polite">
-              {copied ? t.contact.copiedAnnouncement : ""}
+              {copyStatus === "copied"
+                ? t.contact.copiedAnnouncement
+                : copyStatus === "failed"
+                  ? t.contact.copyFailedAnnouncement
+                  : ""}
             </span>
           </div>
           <div className="social-links">

@@ -4,6 +4,16 @@ import SectionKicker from "../shared/SectionKicker.jsx";
 import TechnologyLogo from "../shared/TechnologyLogo.jsx";
 import Timeline from "../shared/Timeline.jsx";
 
+function formatBio(text) {
+  return text.split(/(\*\*.*?\*\*)/g).map((part, index) =>
+    part.startsWith("**") && part.endsWith("**") ? (
+      <strong key={index}>{part.slice(2, -2)}</strong>
+    ) : (
+      part
+    ),
+  );
+}
+
 export default function AboutSection({ language, t }) {
   const experienceItems = experience.map((item) => ({
     ...item,
@@ -35,18 +45,13 @@ export default function AboutSection({ language, t }) {
               {t.about.subheading[1]}
             </p>
           </div>
-          <p className="about-copy">
-            {t.about.bio[0]} <strong>{t.about.bio[1]}</strong>
-            {t.about.bio[2]}
-            <br />
-            <br />
-            {t.about.bio[3]} <strong>{t.about.bio[4]}</strong>
-            {t.about.bio[5]}
-          </p>
+          <div className="about-copy">
+            <p>{formatBio(t.about.bio[0])}</p>
+            <p>{formatBio(t.about.bio[1])}</p>
+          </div>
         </div>
         <div className="stack-heading">
           <span className="small-label">{t.about.technologies}</span>
-          <span className="stack-caption">{t.about.toolbox}</span>
         </div>
         <div className="tech-grid">
           {technologies.map((tech) => (
@@ -66,9 +71,9 @@ export default function AboutSection({ language, t }) {
             </div>
           ))}
         </div>
-        <p className="other-stack">
-          <span>{t.about.otherStack}</span> JavaScript · HTML &amp; CSS · Express · APIs REST · Git ·
-          OAuth · Selenium · Playwright
+        <p className="current-learning">
+          <span>{t.about.currentlyLearning}</span>
+          <strong>Spring Boot</strong>
         </p>
         <div className="timeline-grid">
           <div>

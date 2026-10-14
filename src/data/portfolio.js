@@ -88,13 +88,12 @@ export const education = [
 export const projects = [
   {
     name: "McnanoSoft",
-    logo: "/images/mcnanosoft-logo.png",
     type: "web",
     category: "PLATAFORMA WEB",
     categoryEn: "WEB PLATFORM",
     cycle: "DAW",
     score: "10",
-    stack: ["React", "Node.js", "MongoDB", "Stripe"],
+    stack: ["React", "Node.js", "MongoDB"],
     description:
       "Una plataforma full stack para descubrir y adquirir proyectos de software. Del catálogo a la biblioteca personal, con una experiencia de compra completa.",
     descriptionEn:
@@ -114,7 +113,6 @@ export const projects = [
   },
   {
     name: "GymTonic",
-    logo: "/images/gymtonic-logo.png",
     type: "mobile",
     category: "APLICACIÓN MÓVIL",
     categoryEn: "MOBILE APPLICATION",
