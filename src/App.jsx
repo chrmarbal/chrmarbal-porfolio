@@ -28,10 +28,10 @@ export default function App() {
         t={t}
       />
       <main>
-        <HeroSection t={t} />
+        <HeroSection language={language} t={t} />
         <AboutSection language={language} t={t} />
         <ProjectsSection language={language} t={t} />
-        <ContactSection t={t} />
+        <ContactSection language={language} t={t} />
       </main>
       <SiteFooter t={t} />
     </>

@@ -8,10 +8,10 @@ import {
   Linkedin,
   Mail,
 } from "lucide-react";
-import { cvUrl, email } from "../../data/site.js";
+import { cvUrls, email } from "../../data/site.js";
 import SectionKicker from "../shared/SectionKicker.jsx";
 
-export default function ContactSection({ t }) {
+export default function ContactSection({ language, t }) {
   const [copyStatus, setCopyStatus] = useState("idle");
 
   async function copyEmail() {
@@ -85,7 +85,7 @@ export default function ContactSection({ t }) {
             >
               <Github /> {t.contact.github} <ArrowUpRight />
             </a>
-            <a className="button button-primary cv-button" href={cvUrl} download>
+            <a className="button button-primary cv-button" href={cvUrls[language]} download>
               <Download /> {t.downloadCv}
             </a>
           </div>

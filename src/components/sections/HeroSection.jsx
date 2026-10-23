@@ -1,8 +1,8 @@
 import { ArrowDown, ArrowUpRight, Download, MapPin } from "lucide-react";
-import { cvUrl } from "../../data/site.js";
+import { cvUrls } from "../../data/site.js";
 import workspace from "../../assets/developer-workspace.jpg";
 
-export default function HeroSection({ t }) {
+export default function HeroSection({ language, t }) {
   return (
     <section id="inicio" className="hero">
       <img
@@ -33,7 +33,7 @@ export default function HeroSection({ t }) {
           <a className="button button-primary" href="#proyectos">
             {t.exploreProjects} <ArrowUpRight />
           </a>
-          <a className="button button-outline" href={cvUrl} download>
+          <a className="button button-outline" href={cvUrls[language]} download>
             <Download /> {t.downloadCv}
           </a>
         </div>

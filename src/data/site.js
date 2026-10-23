@@ -1,5 +1,8 @@
 export const email = "chrmarbal@gmail.com";
-export const cvUrl = "/downloads/Christian-Martinez-Ballesta-CV.pdf";
+export const cvUrls = {
+  es: "/downloads/Christian-Martinez-Ballesta-CV-ES.pdf",
+  en: "/downloads/Christian-Martinez-Ballesta-CV-EN.pdf",
+};
 
 export const navigation = [
   { id: "inicio", labelIndex: 0 },
